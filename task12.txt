@@ -1,0 +1,38 @@
+create database employee;
+use employee;
+create table employee_details (
+		emp_id int Unique,
+        emp_name varchar(25) NOT NULL,
+        job varchar(25)NOT NULL,
+mgr int,
+hiredate int,
+salary decimal(10,2),
+commission decimal(10,2),
+deptno int
+);
+
+
+insert into employee_details (emp_id,emp_name,job,mgr,hiredate,salary,commission,deptno) values (8369,'SMITH','clerk',8902,1990-12-18,'800',NULL,20);
+insert into employee_details (emp_id,emp_name,job,mgr,hiredate,salary,commission,deptno) values (8844,'ANYA','Selesman',8698,1991-02-20,'1600',300.00,30);
+insert into employee_details (emp_id,emp_name,job,mgr,hiredate,salary,commission,deptno)values(8351,'SAATH','Selesman',8698,1991-02-22,'1250',500.00,30);
+insert into employee_details (emp_id,emp_name,job,mgr,hiredate,salary,commission,deptno)values(8356,'MAHA','Manager',8839,1990-04-02,'2985.00',NULL,20);
+insert into employee_details (emp_id,emp_name,job,mgr,hiredate,salary,commission,deptno)values(8343,'SAM','Selesman',8698,1991-09-28,'1250',1400,30);
+insert into employee_details (emp_id,emp_name,job,mgr,hiredate,salary,commission,deptno)values(8363,'BINA','Manager',8922,1992-09-08,'2850',NULL,30);
+insert into employee_details (emp_id,emp_name,job,mgr,hiredate,salary,commission,deptno)values(8323,'SIVA','Manager',8922,199-06-09,'2450',NULL,10);
+insert into employee_details (emp_id,emp_name,job,mgr,hiredate,salary,commission,deptno)values(8373,'SCOTT','Analyst',8566,1992-12-09,'3000',NULL,20);
+insert into employee_details (emp_id,emp_name,job,mgr,hiredate,salary,commission,deptno)values(8361,'AMIR','President',null,199-11-18,'5000',NULL,10);
+
+select * from employee_details ;
+
+
+select emp_name,salary from employee_details where salary >= 2200;
+
+select * from employee_details where commission IS NULL or commission =0;
+
+select emp_name,salary from employee_details where salary NOT between 2500 and 4000;
+
+select emp_name,job,salary from employee_details where mgr is null ;
+
+select emp_name from employee_details where emp_name LIKE '%T';
+
+select emp_name from employee_details where emp_name like '__A%';
